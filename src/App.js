@@ -63,7 +63,7 @@ class App extends Component {
                 {/*        </div>);*/}
                 {/*    })*/}
                 {/*}*/}
-                <CardList monsters={'I am the monsters'} anything={['sas', 'mas', 'res']}/>
+                <CardList monsters={filteredMonsters} />
             </div>
         );
     }

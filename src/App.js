@@ -10,11 +10,11 @@ class App extends Component {
             monsters: [],
             searchField: ''
         };
-        console.log('constructor')
+        console.log('constructor in app ln 13')
     }
 
     componentDidMount() {
-        console.log('component did mount')
+        console.log('component did mount ln 17')
         fetch('https://jsonplaceholder.typicode.com/users')
             .then((response) => response.json())
             .then((users) =>
@@ -24,6 +24,7 @@ class App extends Component {
                     },
                     () => {
                         console.log(this.state);
+                        console.log('  this state in component mount ln 27')
                     }
                 )
             );
@@ -38,7 +39,7 @@ class App extends Component {
     }
 
     render() {
-        console.log('render');
+        console.log('render in app ln 42');
 
         const {monsters, searchField} = this.state;
         const {onSearchChange} = this;

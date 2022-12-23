@@ -3,6 +3,8 @@ import CardList from "./components/card-list/card-list.component";
 import SearchBox from "./components/search-box/search-box.component";
 import './App.css';
 
+
+
 class App extends Component {
     constructor() {
         super();
@@ -11,7 +13,7 @@ class App extends Component {
             monsters: [],
             searchField: ''
         };
-        console.log('constructor in app ln 13')
+        console.log('1 * constructor in app ln 13')
     }
 
     componentDidMount() {
@@ -40,7 +42,7 @@ class App extends Component {
     }
 
     render() {
-        console.log('render in app ln 42');
+        console.log('2 * render in app ln 42');
 
         const {monsters, searchField} = this.state;
         const {onSearchChange} = this;

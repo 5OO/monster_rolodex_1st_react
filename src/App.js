@@ -6,7 +6,7 @@ import './App.css';
 const App = () => {
 
     const [searchField, setSearchField] = useState('');   // [value, setValue] one value, one hook
-    console.log({searchField})
+    console.log(searchField)
 
     const onSearchChange = (event) => {
         const searchFieldString = event.target.value.toLocaleLowerCase();

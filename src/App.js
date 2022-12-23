@@ -5,14 +5,11 @@ import './App.css';
 
 const App = () => {
 
-    const []=useState();   // [value, setValue] one value, one hook
+    const [searchField, setSearchField]=useState('');   // [value, setValue] one value, one hook
 
     const onSearchChange = (event) => {
-        const searchField = event.target.value.toLocaleLowerCase();
-
-        this.setState(() => {
-            return {searchField};
-        })
+        const searchFieldString = event.target.value.toLocaleLowerCase();
+        setSearchField(searchFieldString);
     }
 
     return (

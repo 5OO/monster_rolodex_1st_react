@@ -20,10 +20,10 @@ class App extends Component {
         console.log('component did mount ln 17')
         fetch('https://jsonplaceholder.typicode.com/users')
             .then((response) => response.json())
-            .then((users) =>
+            .then((json) =>
                 this.setState(
                     () => {
-                        return {monsters: users};
+                        return {monsters: json};
                     },
                     () => {
                         console.log(this.state);

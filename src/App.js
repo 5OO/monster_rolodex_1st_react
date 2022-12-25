@@ -1,15 +1,26 @@
-import {useState} from "react";
-
+import {useState, useEffect} from "react";
+import CardList from "./components/card-list/card-list.component";
 import SearchBox from "./components/search-box/search-box.component";
 import './App.css';
 
 const App = () => {
     const [searchField, setSearchField] = useState('');   // [value, setValue] one value, one hook
+    const [monsters, setMonsters] = useState([]);
+
+    console.log(' renderdame ! ')
+
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then((response) => response.json())
+        .then((json) => setMonsters());
 
     const onSearchChange = (event) => {
         const searchFieldString = event.target.value.toLocaleLowerCase();
         setSearchField(searchFieldString);
     }
+
+            const filteredMonsters = monsters.filter((monster) => {
+            return monster.name.toLocaleLowerCase().includes(searchField);
+        });
 
     return (
         <div className="App">
@@ -20,7 +31,7 @@ const App = () => {
                        className='monsters-search-box'/>
 
 
-            {/*<CardList monsters={filteredMonsters}/>*/}
+            <CardList monsters={filteredMonsters}/>
         </div>
     );
 };
@@ -67,9 +78,7 @@ const App = () => {
 //         const {monsters, searchField} = this.state;
 //         const {onSearchChange} = this;
 //
-//         const filteredMonsters = monsters.filter((monster) => {
-//             return monster.name.toLocaleLowerCase().includes(searchField);
-//         });
+
 //
 //         return (
 //         );

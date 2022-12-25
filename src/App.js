@@ -9,9 +9,13 @@ const App = () => {
 
     console.log(' renderdame ! ')
 
-    fetch('https://jsonplaceholder.typicode.com/users')
-        .then((response) => response.json())
-        .then((json) => setMonsters());
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then((response) => response.json())
+            .then((json) => setMonsters(json));
+    }, []);
+
+
 
     const onSearchChange = (event) => {
         const searchFieldString = event.target.value.toLocaleLowerCase();

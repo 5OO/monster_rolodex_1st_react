@@ -4,9 +4,7 @@ import SearchBox from "./components/search-box/search-box.component";
 import './App.css';
 
 const App = () => {
-    console.log(' renderdame App ja useState konks');
-    const [searchField, setSearchField] = useState('a');   // [value, setValue] one value, one hook
-    console.log(searchField)
+    const [searchField, setSearchField] = useState('');   // [value, setValue] one value, one hook
 
     const onSearchChange = (event) => {
         const searchFieldString = event.target.value.toLocaleLowerCase();
